@@ -1,0 +1,13 @@
+{
+  "name": "api-gateway",
+  "version": "1.0.0",
+  "description": "API Gateway for TechFlow Solutions",
+  "main": "index.js",
+  "scripts": {
+    "start": "eg gateway start"
+  },
+  "dependencies": {
+    "express-gateway": "^1.16.0",
+    "dotenv": "^16.5.0"
+  }
+}

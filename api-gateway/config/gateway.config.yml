@@ -1,0 +1,35 @@
+http:
+  port: 8080
+
+apiEndpoints:
+  invoices:
+    path: /api/invoices
+    target: http://invoice-service:3000
+  subscriptions:
+    path: /api/subscriptions
+    target: http://subscription-service:3000
+  inventory:
+    path: /api/inventory
+    target: http://inventory-service:3000
+  support:
+    path: /api/support
+    target: http://support-service:3000
+  analytics:
+    path: /api/analytics
+    target: http://analytics-service:3000
+
+policies:
+  - proxy
+
+pipelines:
+  default:
+    apiEndpoints:
+      - invoices
+      - subscriptions
+      - inventory
+      - support
+      - analytics
+    policies:
+      - proxy:
+          - action:
+              changeOrigin: true
